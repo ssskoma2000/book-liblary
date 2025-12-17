@@ -111,6 +111,7 @@ const GET_BY_ID = async (req, res) => {
   return res.json({ message: "OK", data: book });
 };
 const DELETE_BOOK = async (req, res) => {
+
   const book = await Book.findById(req.params.id);
   if (!book) {
     return res.json({ message: "Kitob topilmadi" });
