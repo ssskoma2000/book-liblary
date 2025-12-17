@@ -18,7 +18,10 @@ async function checkToken(req, res, next) {
 		req.user = data
 		next()
 	} catch (error) {
-		console.log(error)
+		res.json({
+			status: 401,
+			message: error.message
+		})
 	}
 }
 module.exports = { checkToken }
